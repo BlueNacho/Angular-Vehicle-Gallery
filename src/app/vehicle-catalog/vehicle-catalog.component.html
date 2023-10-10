@@ -1,0 +1,5 @@
+<h2>Vehicles Available</h2>
+<button type="button">add vehicle</button>
+<article *ngFor="let vehicle of vehicles" routerLink="/management/{{vehicle.id}}">
+    <app-vehicle-product [vehicle]="vehicle"></app-vehicle-product>
+</article>
