@@ -27,7 +27,7 @@ To run this project locally, follow these steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/vehicle-gallery-app.git
+   git clone https://github.com/BlueNacho/Angular-Vehicle-Gallery
    ```
 
 2. Navigate to the project directory:
