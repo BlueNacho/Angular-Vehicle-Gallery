@@ -26,12 +26,18 @@ export class VehicleManagementComponent {
       ) { }
 
     ngOnInit(): void {
-      this.getHero();
+      this.getVehicle();
     }
 
-    getHero(): void {
+    getVehicle(): void {
       const id = Number(this.route.snapshot.paramMap.get('id'));
       this.vehicle = this.vehicleService.getVehicle(id);
+    }
+
+    removeVehicle(): void {
+      const id = Number(this.route.snapshot.paramMap.get('id'));
+      this.vehicleService.removeVehicle(id);
+      this.goBack();
     }
 
     goBack(): void {

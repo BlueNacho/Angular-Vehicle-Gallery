@@ -1,7 +1,8 @@
-<section>
-    <span><img src="{{vehicle.image}}" alt="Vehicle Image" width="290" height="180"></span>
-    <span>{{vehicle.model}} / </span> 
-    <span>{{vehicle.description}} / </span> 
-    <span>{{vehicle.type}}</span> 
-</section>
-
+<div class="card" style="width: 18rem;">
+    <img src="{{vehicle.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{vehicle.model}}</h5>
+        <p class="card-text">{{vehicle.description}}</p>
+        <p>Type: <strong>{{vehicle.type}}</strong></p>
+    </div>
+</div>
