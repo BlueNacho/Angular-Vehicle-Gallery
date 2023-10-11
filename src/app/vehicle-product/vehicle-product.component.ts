@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Vehicle } from '../vehicle';
 
 @Component({
@@ -15,9 +15,18 @@ export class VehicleProductComponent {
     type: ''
   };
 
+  favourite: boolean = false;
+
+  @Output() favouriteChange = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleFavourite() {
+    this.favourite = !this.favourite;
+    this.favouriteChange.emit(this.favourite);
   }
 }
     

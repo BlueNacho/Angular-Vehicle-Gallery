@@ -9,9 +9,10 @@ import { VehicleService } from '../vehicle.service';
   styleUrls: ['./vehicle-catalog.component.scss']
 })
 export class VehicleCatalogComponent {
-  vehicles: Vehicle[] = [];
-
   constructor(private vehicleService: VehicleService) { }
+
+  vehicles: Vehicle[] = [];  
+  favouriteCount: number = this.vehicleService.favouriteCount;
 
   ngOnInit(): void {
     this.getVehicles()
@@ -19,5 +20,9 @@ export class VehicleCatalogComponent {
 
   getVehicles(): void {
     this.vehicles = this.vehicleService.getVehicles();
+  }
+
+  recieveFavouriteChange($event: boolean) {
+    this.favouriteCount = this.vehicleService.favouriteCounter($event);
   }
 }

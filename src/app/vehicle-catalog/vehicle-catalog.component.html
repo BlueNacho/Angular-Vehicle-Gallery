@@ -1,8 +1,9 @@
 <div class="mx-auto text-center justify-content-center">
     <div class="container">
+        <h3 class="text-start">Favourites: {{favouriteCount}}</h3>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-            <div class="col mb-4" *ngFor="let vehicle of vehicles" routerLink="/management/{{vehicle.id}}">
-                <app-vehicle-product [vehicle]="vehicle"></app-vehicle-product>
+            <div class="col mb-4" *ngFor="let vehicle of vehicles">
+                <app-vehicle-product (favouriteChange)="recieveFavouriteChange($event)" [vehicle]="vehicle"></app-vehicle-product>
             </div>
         </div>
     </div>

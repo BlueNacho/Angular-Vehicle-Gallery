@@ -1,8 +1,10 @@
 <div class="card" style="width: 18rem;">
     <img src="{{vehicle.image}}" class="card-img-top" alt="...">
-    <div class="card-body">
+    <div class="card-body">  
+        <button id="btn-fav" type="button" (click)="toggleFavourite()" class="btn btn-warning text-light rounded-pill"><i class="bi bi-star-fill"></i></button>   
         <h5 class="card-title">{{vehicle.model}}</h5>
         <p class="card-text">{{vehicle.description}}</p>
         <p>Type: <strong>{{vehicle.type}}</strong></p>
+        <button class="btn btn-primary" routerLink="/management/{{vehicle.id}}"><i class="bi bi-pencil-square"></i> Edit</button>
     </div>
 </div>

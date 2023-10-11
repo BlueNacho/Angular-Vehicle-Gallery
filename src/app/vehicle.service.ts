@@ -8,6 +8,8 @@ import { VEHICLES } from './mock-vehicles';
 })
 export class VehicleService {
 
+  favouriteCount: number = 0;
+
   constructor() { }
 
   getVehicles(): Vehicle[] {
@@ -29,5 +31,10 @@ export class VehicleService {
     if (index >= 0) {
       VEHICLES.splice(index, 1);
     }
+  }
+
+  favouriteCounter($event: boolean): number {
+    $event ? this.favouriteCount++ : this.favouriteCount--;
+    return this.favouriteCount;
   }
 }
